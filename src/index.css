@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { --background: 210 40% 98%; --foreground: 222 47% 11%; --card: 0 0% 100%; --card-foreground: 222 47% 11%; --muted: 210 40% 94%; --muted-foreground: 215 16% 47%; --primary: 217 91% 38%; --primary-foreground: 210 40% 98%; --border: 214 32% 88%; --input: 214 32% 88%; --ring: 217 91% 60%; --destructive: 0 72% 51%; --destructive-foreground: 0 0% 100%; }
+  .dark { --background: 222 47% 7%; --foreground: 210 40% 96%; --card: 222 47% 10%; --card-foreground: 210 40% 96%; --muted: 217 33% 17%; --muted-foreground: 215 20% 65%; --primary: 213 94% 68%; --primary-foreground: 222 47% 8%; --border: 217 33% 20%; --input: 217 33% 20%; --ring: 213 94% 68%; --destructive: 0 63% 45%; --destructive-foreground: 0 0% 100%; }
+  body { @apply bg-background text-foreground antialiased; font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11'; }
+}
+@layer components {
+  .card { @apply rounded-xl border border-border bg-card text-card-foreground shadow-sm; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition hover:bg-muted disabled:pointer-events-none disabled:opacity-50; }
+  .btn-primary { @apply bg-primary text-primary-foreground hover:opacity-90; }
+  .input { @apply h-10 rounded-md border border-input bg-background px-3 py-2 text-sm outline-none ring-offset-background placeholder:text-muted-foreground focus:ring-2 focus:ring-ring; }
+  .badge { @apply inline-flex items-center rounded-full border border-border px-2 py-0.5 text-xs font-medium; }
+  .tab { @apply flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground; }
+  .tab-active { @apply bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground; }
+}
